@@ -3,6 +3,8 @@ import { Menu, X } from 'lucide-react';
 import { motion } from 'framer-motion';
 import { Link, useLocation } from 'react-router-dom';
 import { ThemeSelector } from './ThemeSelector';
+import { LanguageSelector } from './LanguageSelector';
+import { useLanguage } from '../context/LanguageContext';
 
 const navItems = [
   { name: 'Home', path: '/' },
@@ -15,6 +17,7 @@ export const Header: React.FC = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [scrollProgress, setScrollProgress] = useState(0);
   const location = useLocation();
+  const { t } = useLanguage();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -62,14 +65,16 @@ export const Header: React.FC = () => {
                     : 'text-fg-lighter'
                   }`}
               >
-                {item.name}
+                {t(`header.${item.name.toLowerCase()}`)}
               </Link>
             ))}
+            <LanguageSelector />
             <ThemeSelector />
           </div>
 
           {/* Mobile Navigation */}
           <div className="md:hidden flex items-center">
+            <LanguageSelector />
             <ThemeSelector />
             <button
               onClick={() => setIsOpen(!isOpen)}
@@ -105,7 +110,7 @@ export const Header: React.FC = () => {
                     }`}
                   onClick={() => setIsOpen(false)}
                 >
-                  {item.name}
+                  {t(`header.${item.name.toLowerCase()}`)}
                 </Link>
               ))}
             </div>
