@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { Menu, X } from 'lucide-react';
 import { motion } from 'framer-motion';
 import { Link, useLocation } from 'react-router-dom';
-import { ThemeToggle } from './ThemeToggle';
+import { ThemeSelector } from './ThemeSelector';
 
 const navItems = [
   { name: 'Home', path: '/' },
@@ -28,9 +28,9 @@ export const Header: React.FC = () => {
   }, []);
 
   return (
-    <header className="fixed top-0 left-0 right-0 z-50 bg-white dark:bg-gray-900 shadow-sm">
+    <header className="fixed top-0 left-0 right-0 z-50 bg-bg-lighter border-b border-card">
       <motion.div 
-        className="h-1 bg-blue-500"
+        className="h-1 bg-special"
         style={{ 
           scaleX: scrollProgress / 100,
           transformOrigin: '0%',
@@ -45,7 +45,7 @@ export const Header: React.FC = () => {
         <div className="flex items-center justify-between">
           <Link 
             to="/"
-            className="text-xl font-bold text-gray-900 dark:text-white"
+            className="text-xl font-bold font-mono text-fg"
           >
             DevPortfolio
           </Link>
@@ -56,30 +56,30 @@ export const Header: React.FC = () => {
               <Link
                 key={item.path}
                 to={item.path}
-                className={`text-sm font-medium transition-colors hover:text-blue-500
+                className={`text-sm font-medium transition-colors hover:text-special font-mono
                   ${location.pathname === item.path 
-                    ? 'text-blue-500' 
-                    : 'text-gray-600 dark:text-gray-300'
+                    ? 'text-special' 
+                    : 'text-fg-lighter'
                   }`}
               >
                 {item.name}
               </Link>
             ))}
-            <ThemeToggle />
+            <ThemeSelector />
           </div>
 
           {/* Mobile Navigation */}
           <div className="md:hidden flex items-center">
-            <ThemeToggle />
+            <ThemeSelector />
             <button
               onClick={() => setIsOpen(!isOpen)}
               className="ml-4 p-2"
               aria-label="Toggle menu"
             >
               {isOpen ? (
-                <X className="w-6 h-6 text-gray-600 dark:text-gray-300" />
+                <X className="w-6 h-6 text-fg-lighter" />
               ) : (
-                <Menu className="w-6 h-6 text-gray-600 dark:text-gray-300" />
+                <Menu className="w-6 h-6 text-fg-lighter" />
               )}
             </button>
           </div>
@@ -98,10 +98,10 @@ export const Header: React.FC = () => {
                 <Link
                   key={item.path}
                   to={item.path}
-                  className={`block text-sm font-medium transition-colors hover:text-blue-500
+                  className={`block text-sm font-medium transition-colors hover:text-special font-mono
                     ${location.pathname === item.path 
-                      ? 'text-blue-500' 
-                      : 'text-gray-600 dark:text-gray-300'
+                      ? 'text-special' 
+                      : 'text-fg-lighter'
                     }`}
                   onClick={() => setIsOpen(false)}
                 >

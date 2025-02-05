@@ -22,9 +22,9 @@ export const Home: React.FC = () => {
         <div className="text-xl sm:text-2xl md:text-3xl text-gray-600 dark:text-gray-300 mb-8 h-20">
           <TypeAnimation
             sequence={[
-              'Frontend Developer',
+              'Desenvolvedor Full Stack',
               2000,
-              'React Specialist',
+              'React, Vite, Tailwind, Node.js, Express, MongoDB etc.',
               2000,
               'UI/UX Enthusiast',
               2000,
@@ -36,14 +36,13 @@ export const Home: React.FC = () => {
         </div>
 
         <p className="text-lg text-gray-600 dark:text-gray-300 mb-8 max-w-2xl mx-auto">
-          I build exceptional digital experiences that combine clean code with 
-          stunning designs. Passionate about creating responsive, user-friendly 
-          applications that solve real-world problems.
+        Eu construo experiências digitais excepcionais que combinam código limpo com designs impressionantes. Apaixonado por criar aplicativos responsivos e fáceis de usar
+        que resolvem problemas do mundo real.
         </p>
 
         <div className="flex justify-center space-x-4 mb-12">
           <a
-            href="https://github.com"
+            href="https://github.com/zGabrielR1"
             target="_blank"
             rel="noopener noreferrer"
             className="p-2 rounded-full bg-gray-100 dark:bg-gray-800 hover:bg-gray-200 dark:hover:bg-gray-700 transition-colors"
@@ -61,7 +60,7 @@ export const Home: React.FC = () => {
             <Linkedin className="w-6 h-6 text-gray-700 dark:text-gray-300" />
           </a>
           <a
-            href="mailto:contact@example.com"
+            href="mailto:gabrielrenostro581@gmail.com"
             className="p-2 rounded-full bg-gray-100 dark:bg-gray-800 hover:bg-gray-200 dark:hover:bg-gray-700 transition-colors"
             aria-label="Email Contact"
           >
