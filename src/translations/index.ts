@@ -9,7 +9,7 @@ export const translations = {
       contact: 'Contato',
     },
     home: {
-      greeting: 'Olá! Eu sou',
+      greeting: 'Olá! Eu me chamo',
       role: 'Desenvolvedor Full Stack',
       about: 'Apaixonado por criar soluções inovadoras e experiências digitais excepcionais.',
       cta: 'Veja meus projetos',

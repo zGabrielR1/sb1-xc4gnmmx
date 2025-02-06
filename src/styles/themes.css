@@ -58,4 +58,21 @@
 :root {
   --border-default: 2px solid var(--card);
   --border-dashed: 2px dashed var(--card);
-} 
+}
+
+/* Theme overrides for Home.tsx */
+.cat-mocha .dark\:text-gray-100 {
+  color: var(--fg); /* Use the theme's foreground color */
+}
+
+.cat-mocha .bg-gradient-to-r {
+  background-image: linear-gradient(to right, var(--blue), var(--purple));
+}
+
+.cat-latte .bg-gradient-to-r {
+  background-image: linear-gradient(to right, var(--blue), var(--purple));
+}
+
+.biscuit .bg-gradient-to-r {
+    background-image: linear-gradient(to right, var(--yellow), var(--purple));
+}
