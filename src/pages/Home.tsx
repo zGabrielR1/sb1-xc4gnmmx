@@ -2,8 +2,17 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import { TypeAnimation } from 'react-type-animation';
 import { Github, Linkedin, Mail, ChevronDown } from 'lucide-react';
+import { useLanguage } from '../context/LanguageContext';
+
+const textShadowStyles = `
+  .text-shadow {
+    text-shadow: 0 0 1px rgba(255, 255, 255, 0.3);
+  }
+`;
 
 export const Home: React.FC = () => {
+  const { t } = useLanguage();
+
   return (
     <section className="min-h-screen flex flex-col justify-center px-4 sm:px-6 lg:px-8">
       <motion.div
@@ -12,9 +21,10 @@ export const Home: React.FC = () => {
         transition={{ duration: 0.5 }}
         className="max-w-4xl mx-auto text-center"
       >
-        <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold text-gray-900 dark:text-white mb-6">
-          Olá, eu sou{' '}
-          <span className="bg-gradient-to-r from-blue-500 to-purple-500 text-transparent bg-clip-text">
+        <style>{textShadowStyles}</style>
+        <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold text-gray-900 dark:text-gray-100 mb-6">
+          {t('home.greeting')}{' '}
+          <span className="bg-gradient-to-r from-blue-500 to-purple-500 dark:from-blue-300 dark:to-purple-300 text-transparent bg-clip-text dark:text-shadow">
             Gabriel Renostro
           </span>
         </h1>
@@ -22,7 +32,7 @@ export const Home: React.FC = () => {
         <div className="text-xl sm:text-2xl md:text-3xl text-gray-600 dark:text-gray-300 mb-8 h-20">
           <TypeAnimation
             sequence={[
-              'Desenvolvedor Full Stack',
+              t('home.role'),
               2000,
               'React, Vite, Tailwind, Node.js, Express, MongoDB etc.',
               2000,
@@ -36,8 +46,7 @@ export const Home: React.FC = () => {
         </div>
 
         <p className="text-lg text-gray-600 dark:text-gray-300 mb-8 max-w-2xl mx-auto">
-        Eu construo experiências digitais excepcionais que combinam código limpo com designs impressionantes. Apaixonado por criar aplicativos responsivos e fáceis de usar
-        que resolvem problemas do mundo real.
+          {t('home.about')}
         </p>
 
         <div className="flex justify-center space-x-4 mb-12">
@@ -46,7 +55,7 @@ export const Home: React.FC = () => {
             target="_blank"
             rel="noopener noreferrer"
             className="p-2 rounded-full bg-gray-100 dark:bg-gray-800 hover:bg-gray-200 dark:hover:bg-gray-700 transition-colors"
-            aria-label="GitHub Profile"
+            aria-label={t('home.githubProfile')}
           >
             <Github className="w-6 h-6 text-gray-700 dark:text-gray-300" />
           </a>
@@ -55,14 +64,14 @@ export const Home: React.FC = () => {
             target="_blank"
             rel="noopener noreferrer"
             className="p-2 rounded-full bg-gray-100 dark:bg-gray-800 hover:bg-gray-200 dark:hover:bg-gray-700 transition-colors"
-            aria-label="LinkedIn Profile"
+            aria-label={t('home.linkedinProfile')}
           >
             <Linkedin className="w-6 h-6 text-gray-700 dark:text-gray-300" />
           </a>
           <a
             href="mailto:gabrielrenostro581@gmail.com"
             className="p-2 rounded-full bg-gray-100 dark:bg-gray-800 hover:bg-gray-200 dark:hover:bg-gray-700 transition-colors"
-            aria-label="Email Contact"
+            aria-label={t('home.emailContact')}
           >
             <Mail className="w-6 h-6 text-gray-700 dark:text-gray-300" />
           </a>

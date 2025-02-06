@@ -13,6 +13,9 @@ export const translations = {
       role: 'Desenvolvedor Full Stack',
       about: 'Apaixonado por criar soluções inovadoras e experiências digitais excepcionais.',
       cta: 'Veja meus projetos',
+      githubProfile: 'Perfil do GitHub',
+      linkedinProfile: 'Perfil do LinkedIn',
+      emailContact: 'Contato por Email'
     },
     projects: {
       title: 'Meus Projetos',
@@ -46,6 +49,9 @@ export const translations = {
       role: 'Full Stack Developer',
       about: 'Passionate about creating innovative solutions and exceptional digital experiences.',
       cta: 'View my projects',
+      githubProfile: 'GitHub Profile',
+      linkedinProfile: 'LinkedIn Profile',
+      emailContact: 'Email Contact'
     },
     projects: {
       title: 'My Projects',
